@@ -32,4 +32,10 @@ public class EventTest {
     Event newEvent = new Event(100, "food", "drink", "entertainment");
     assertEquals("entertainment", newEvent.getEntertainment());
   }
+
+  @Test
+  public void guestSize_determinesIfNumberOfGuestsLessThanOneHundred_false() {
+  Event newEvent = new Event(100, "standard", "open-bar", "dj");
+  assertEquals(false, newEvent.guestSize(100));
+  }
 }

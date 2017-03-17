@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+
 public class Event {
   private int mGuests;
   private String mFood;
@@ -25,5 +29,9 @@ public class Event {
 
   public String getEntertainment() {
     return mEntertainment;
+  }
+
+  public boolean guestSize(int userGuests) {
+    return mGuests > 100;
   }
 }
