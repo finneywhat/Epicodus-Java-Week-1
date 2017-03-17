@@ -34,4 +34,19 @@ public class Event {
   public boolean guestSize(int userGuests) {
     return mGuests > 100;
   }
+
+  int cost;
+  public int guestCost(int userGuests) {
+    if (userGuests > 100) {
+      cost += 1000;
+    } else {
+      cost += 250;
+    }
+    return cost;
+  }
 }
+
+// method to calculate cost for guestSize input
+// method to calculate cost for food input
+// method to calculate cost for drink input
+// method to calculate cost for entertainment input

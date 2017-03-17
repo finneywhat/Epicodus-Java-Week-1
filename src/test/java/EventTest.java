@@ -38,4 +38,10 @@ public class EventTest {
   Event newEvent = new Event(100, "standard", "open-bar", "dj");
   assertEquals(false, newEvent.guestSize(100));
   }
+
+  @Test
+  public void guestCost_returnCostForGuestSizeUnder100_1000() {
+  Event newEvent = new Event(120, "standard", "open-bar", "dj");
+  assertEquals(1000, newEvent.guestCost(120));
+  }
 }
