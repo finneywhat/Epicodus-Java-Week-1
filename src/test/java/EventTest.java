@@ -8,4 +8,10 @@ public class EventTest {
     Event newEvent = new Event(100, "food", "drink", "entertainment");
     assertEquals(true, newEvent instanceof Event);
   }
+
+  @Test
+  public void getGuests_returnNumberOfGuests_100() {
+    Event newEvent = new Event(100, "food", "drink", "entertainment");
+    assertEquals(100, newEvent.getGuests());
+  }
 }
