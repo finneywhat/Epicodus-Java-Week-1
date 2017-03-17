@@ -1,9 +1,9 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-archivesBaseName = "event-planning"
+archivesBaseName = "event"
 version = '1.0'
-mainClassName = "EventPlanning"
+mainClassName = "Event"
 
 repositories {
   mavenCentral()
