@@ -26,4 +26,10 @@ public class EventTest {
     Event newEvent = new Event(100, "food", "drink", "entertainment");
     assertEquals("drink", newEvent.getDrink());
   }
+
+  @Test
+  public void getEntertainment_returnUserEntertainmentInput_entertainment() {
+    Event newEvent = new Event(100, "food", "drink", "entertainment");
+    assertEquals("entertainment", newEvent.getEntertainment());
+  }
 }
