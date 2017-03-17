@@ -77,11 +77,3 @@ public class Event {
     return cost;
   }
 }
-  // int cost = 0;
-  // public int calculateTotalCost(int userGuests, String userFood, String userDrink, String userEntertainment) {
-  //   if (userGuests < 100) {
-  //     cost += 200;
-  //   } else {
-  //     cost += 1000;
-  //   }
-  // }
