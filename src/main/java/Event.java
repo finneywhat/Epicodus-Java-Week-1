@@ -35,8 +35,8 @@ public class Event {
     return mGuests > 100;
   }
 
-  int cost;
   public int guestCost(int userGuests) {
+    int cost = 0;
     if (userGuests > 100) {
       cost += 1000;
     } else {
@@ -46,7 +46,8 @@ public class Event {
   }
 
   public int foodCost(String userFood) {
-    if (userFood == "standard") {
+    int cost = 0;
+    if (userFood.equals("standard")) {
       cost += 1000;
     } else {
       cost += 2500;
@@ -55,7 +56,8 @@ public class Event {
   }
 
   public int drinkCost(String userDrink) {
-    if (userDrink == "open") {
+    int cost = 0;
+    if (userDrink.equals("open")) {
       cost += 3000;
     } else {
       cost += 1000;
@@ -64,9 +66,10 @@ public class Event {
   }
 
   public int entertainmentCost(String userEntertainment) {
-    if (userEntertainment == "dj") {
+    int cost = 0;
+    if (userEntertainment.equals("dj")) {
       cost += 500;
-    } else if (userEntertainment == "band") {
+    } else if (userEntertainment.equals("band")) {
       cost += 1000;
     } else {
       cost += 0;
@@ -74,17 +77,11 @@ public class Event {
     return cost;
   }
 }
-
-
-// int cost;
-// public int calculateTotalCost(int userGuests, String userFood, String userDrink, String userEntertainment) {
-//   if (userGuests > 100) {
-//     cost += 1000;
-//   } else
-// }
-
-
-// method to calculate cost for guestSize input
-// method to calculate cost for food input
-// method to calculate cost for drink input
-// method to calculate cost for entertainment input
+  // int cost = 0;
+  // public int calculateTotalCost(int userGuests, String userFood, String userDrink, String userEntertainment) {
+  //   if (userGuests < 100) {
+  //     cost += 200;
+  //   } else {
+  //     cost += 1000;
+  //   }
+  // }
