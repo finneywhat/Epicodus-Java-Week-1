@@ -44,7 +44,12 @@ public class Event {
     }
     return cost;
   }
+
+  public int foodCost(int userFood) {
+    return 0;
+  }
 }
+
 
 // method to calculate cost for guestSize input
 // method to calculate cost for food input

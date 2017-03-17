@@ -44,4 +44,10 @@ public class EventTest {
   Event newEvent = new Event(120, "standard", "open-bar", "dj");
   assertEquals(1000, newEvent.guestCost(120));
   }
+
+  @Test
+  public void foodCost_returnCostForFood_1000() {
+  Event newEvent = new Event(120, "standard", "open-bar", "dj");
+  assertEquals(1000, newEvent.foodCost("standard"));
+  }
 }
