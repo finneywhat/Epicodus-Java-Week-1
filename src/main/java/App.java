@@ -20,14 +20,14 @@ public class App {
         System.out.println("***********************************************\n");
 
         if (intGuestInput > 100) {
-          System.out.println(intGuestInput + " guests! With a party that size, we'd love to help out with the costs. Enter the coupon code 'hundred' at checkout to apply a $100-off discount to your total. Press enter to move on to our drink options.");
+          System.out.println(intGuestInput + " guests! With a party that size, we'd love to help out with the costs. Enter the coupon code 'hundred' at checkout to apply a $100-off discount to your total.\n");
         } else if (intGuestInput > 50) {
-          System.out.println("With " + intGuestInput + " guests, we'd like to offer you a discount. Enter the coupon code 'fifty', when prompted, to receive $50 off your total today. Press enter to move on to our drink options.");
+          System.out.println("With " + intGuestInput + " guests, we'd like to offer you a discount. Enter the coupon code 'fifty', when prompted, to receive $50 off your total today.\n");
         } else {
           System.out.println("Great - " + intGuestInput + " guests - check. Now to feed this group, we offer the following options:\n\n-- hor-d'oeuvres,\n-- buffet,\n-- dinner.\n\nPlease select one.");
           System.out.println("\n");
         }
-
+        System.out.println("Now to feed this group, we offer the following options:\n\n-- hor-d'oeuvres,\n-- buffet,\n-- dinner.\n\nPlease select one.\n");
         String stringFoodInput = console.readLine().toLowerCase();
         System.out.println("***********************************************\n");
         System.out.println("Moving on to drinks, we offer the following options:\n\n-- non-alcoholic (sodas, spritzers, and juice),\n-- cash-bar,\n-- open-bar.\n\nPlease select one.");
