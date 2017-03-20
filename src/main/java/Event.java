@@ -8,6 +8,8 @@ public class Event {
   private String mDrink;
   private String mEntertainment;
 
+  //arrays to hold all the different options?
+
   public Event(int userGuests, String userFood, String userDrink, String userEntertainment) {
     mGuests = userGuests;
     mFood = userFood;
@@ -31,49 +33,70 @@ public class Event {
     return mEntertainment;
   }
 
-  public boolean guestSize(int userGuests) {
-    return mGuests > 100;
+public Integer calcEventPrice() {
+  Integer perGuestPrice = 0;
+  Integer entertainmentPrice = 0;
+  if (mFood.startsWith("hor")) { //could make equal to "1" intead
+    perGuestPrice += 5;
+  } else if (mFood.startsWith("buf")) { //equal to 2
+    perGuestPrice += 9;
+  } else if (mFood.startsWith("din")) {
+    perGuestPrice += 15;
+  } else {
+    perGuestPrice = 0;
+  }
+  if (mDrink.startsWith("no")) {
+    perGuestPrice += 5;
+  } else if (mDrink.startsWith("ca")) {
+    perGuestPrice += 10;
+  } else if (mDrink.startsWith("op")){
+    perGuestPrice += 20;
+  } else {
+    perGuestPrice = 0;
+  }
+  if (mEntertainment.equals("dj") || mEntertainment.startsWith("vis")) {
+    entertainmentPrice += 500;
+  } else if (mEntertainment.equals("band")) {
+    entertainmentPrice += 1000;
+  } else {
+    entertainmentPrice = 0;
+  }
+  return mGuests * perGuestPrice + entertainmentPrice;
+}
+
+  public String displayFood() {
+    String foodOutput = "";
+    if (mFood.startsWith("hor")) {
+      foodOutput = "hors-d'oeuvres";
+    } else if (mFood.startsWith("buf")) {
+      foodOutput = "buffet";
+    } else if (mFood.startsWith("din")) {
+      foodOutput = "dinner";
+    }
+    return foodOutput;
   }
 
-  public int guestCost(int userGuests) {
-    int cost = 0;
-    if (userGuests > 100) {
-      cost += 1000;
-    } else {
-      cost += 250;
+  public String displayDrink() {
+    String drinkOutput = "";
+    if (mDrink.startsWith("non")) {
+      drinkOutput = "non-alcoholic";
+    } else if (mDrink.startsWith("ca")) {
+      drinkOutput = "cash-bar";
+    } else if (mDrink.startsWith("op")) {
+      drinkOutput = "open-bar";
     }
-    return cost;
+    return drinkOutput;
   }
 
-  public int foodCost(String userFood) {
-    int cost = 0;
-    if (userFood.equals("standard")) {
-      cost += 1000;
-    } else {
-      cost += 2500;
+  public String displayEnt() {
+    String entOutput = "";
+    if (mEntertainment.startsWith("d")) {
+      entOutput = "dj";
+    } else if (mEntertainment.startsWith("b")) {
+      entOutput = "band";
+    } else if (mEntertainment.startsWith("vis")) {
+      entOutput = "visual-artist";
     }
-    return cost;
-  }
-
-  public int drinkCost(String userDrink) {
-    int cost = 0;
-    if (userDrink.equals("open")) {
-      cost += 3000;
-    } else {
-      cost += 1000;
-    }
-    return cost;
-  }
-
-  public int entertainmentCost(String userEntertainment) {
-    int cost = 0;
-    if (userEntertainment.equals("dj")) {
-      cost += 500;
-    } else if (userEntertainment.equals("band")) {
-      cost += 1000;
-    } else {
-      cost += 0;
-    }
-    return cost;
+    return entOutput;
   }
 }

@@ -34,32 +34,26 @@ public class EventTest {
   }
 
   @Test
-  public void guestSize_determinesIfNumberOfGuestsLessThanOneHundred_false() {
-  Event newEvent = new Event(100, "standard", "open-bar", "dj");
-  assertEquals(false, newEvent.guestSize(100));
+  public void calcEventPrice_returnPriceForOptionsBasedOnGuests_700() {
+    Event testEvent = new Event(20, "hors-d'oeuvres", "non-alcoholic", "dj");
+    assertEquals(700, testEvent.calcEventPrice());
   }
 
   @Test
-  public void guestCost_returnCostForGuestSizeUnder100_1000() {
-  Event newEvent = new Event(120, "standard", "open-bar", "dj");
-  assertEquals(1000, newEvent.guestCost(120));
+  public void displayFood_displayFoodSelectionEvenIfUserMisspells_dinner() {
+    Event thisEvent = new Event(20, "din", "non-alcoholic", "dj");
+    assertEquals("dinner", thisEvent.displayFood());
   }
 
   @Test
-  public void foodCost_returnCostForFood_1000() {
-  Event newEvent = new Event(120, "standard", "open-bar", "dj");
-  assertEquals(1000, newEvent.foodCost("standard"));
+  public void displayDrink_displayDrinkSelectionEvenIfUserMisspells_cash() {
+    Event thisEvent = new Event(20, "din", "cass-bar", "dj");
+    assertEquals("cash-bar", thisEvent.displayDrink());
   }
 
   @Test
-  public void drinkCost_returnCostForDrink_3000() {
-  Event newEvent = new Event(120, "standard", "open", "dj");
-  assertEquals(3000, newEvent.drinkCost("open"));
-  }
-
-  @Test
-  public void entertainmentCost_returnCostForUserInputEntertainment_500() {
-  Event newEvent = new Event(120, "standard", "open", "dj");
-  assertEquals(500, newEvent.entertainmentCost("dj"));
+  public void displayEnt_displayEntertainmentSelectionEvenIfUserMisspells_band() {
+    Event thisEvent = new Event(20, "din", "non-alcoholic", "badn");
+    assertEquals("band", thisEvent.displayEnt());
   }
 }
