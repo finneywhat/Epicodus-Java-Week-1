@@ -8,8 +8,6 @@ public class Event {
   private String mDrink;
   private String mEntertainment;
 
-  //arrays to hold all the different options?
-
   public Event(int userGuests, String userFood, String userDrink, String userEntertainment) {
     mGuests = userGuests;
     mFood = userFood;
@@ -36,9 +34,9 @@ public class Event {
 public Integer calcEventPrice() {
   Integer perGuestPrice = 0;
   Integer entertainmentPrice = 0;
-  if (mFood.startsWith("hor")) { //could make equal to "1" intead
+  if (mFood.startsWith("hor")) {
     perGuestPrice += 5;
-  } else if (mFood.startsWith("buf")) { //equal to 2
+  } else if (mFood.startsWith("buf")) {
     perGuestPrice += 9;
   } else if (mFood.startsWith("din")) {
     perGuestPrice += 15;
